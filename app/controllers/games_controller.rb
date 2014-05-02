@@ -79,5 +79,15 @@ class GamesController < ApplicationController
       format.html { redirect_to games_url }
       format.json { head :no_content }
     end
+	
+	def import
+		Game.import(params[:file])
+		redirect_to root_url, notice: "Games imported."
+	end
   end
+  
+  
+  
+  
+  
 end

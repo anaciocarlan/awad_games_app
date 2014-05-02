@@ -1,5 +1,7 @@
 Gamenetwork::Application.routes.draw do
-  resources :games
+  resources :games do
+	collection { post :import }
+  end
 
 
   # The priority is based upon order of creation:
